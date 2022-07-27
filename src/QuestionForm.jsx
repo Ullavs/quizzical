@@ -10,8 +10,10 @@ export default function QuestionForm(props) {
           options={question.options}
         />
       ))}
-
-      <button>Check answers</button>
+      <div className="quiz-result">
+        <p className="quiz-result-displayed">You scored 3/5 correct answers</p>
+        <button className="main-button">Check answers</button>
+      </div>
     </div>
   );
 }
