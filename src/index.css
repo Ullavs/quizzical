@@ -150,17 +150,17 @@ body {
 
 .picked {
   background-color: var(--option-buttons-background-color);
-  border: none;
+  border: 1px solid var(--option-buttons-background-color);
 }
 
 .correct {
   background-color: var(--right-option-background-color);
-  border: none;
+  border: 1px solid var(--right-option-background-color);
 }
 
 .wrong {
   background-color: var(--wrong-option-background-color);
-  border: none;
+  border: 1px solid var(--wrong-option-background-color);
   opacity: 0.5;
 }
 
