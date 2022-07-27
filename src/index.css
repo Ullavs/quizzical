@@ -1,0 +1,169 @@
+:root {
+  --background-color: #f5f7fb;
+  --font-family: "Inter", sans-serif;
+  --font-family-2: "Karla", sans-serif;
+
+  /* Text colors: */
+  --main-text-color: #293264;
+
+  /* Button colors */
+  --main-buttons-background-color: #4d5b9e;
+  --main-buttons-text-color: #f5f7fb;
+  --option-buttons-background-color: #d6dbf5;
+  --right-option-background-color: #94d7a2;
+  --wrong-option-background-color: #f8bcbc;
+  --option-buttons-border-color: #4d5b9e;
+
+  /* Lines */
+  --stroke-color: #dbdef0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  background-color: var(--background-color);
+  background-image: url(images/background-img-1.svg),
+    url(images/background-img-2.svg);
+  background-repeat: no-repeat;
+  background-position: top right, bottom left;
+  background-size: 297px 235px;
+  font-family: var(--font-family);
+  color: var(--main-text-color);
+}
+
+.container {
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 48rem;
+}
+
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-screen h1 {
+  font-family: var(--font-family-2);
+  font-size: 1.953125rem;
+  font-weight: 700;
+  line-height: 2.283125rem;
+}
+
+.welcome-screen p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.21rem;
+  margin-block-start: 0.4375rem;
+}
+
+.welcome-screen button {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.21rem;
+  margin-block-start: 1.8125rem;
+  padding: 1rem 3.72rem;
+  background-color: var(--main-buttons-background-color);
+  color: var(--main-buttons-text-color);
+  border-radius: 0.9375rem;
+  border: none;
+  cursor: pointer;
+  transition: 250ms all ease-in-out;
+}
+
+.welcome-screen button:hover,
+.welcome-screen button:focus {
+  opacity: 0.8;
+}
+
+.quiz-screen {
+  padding-block-start: 2.5rem;
+}
+
+.single-question {
+  padding-block-end: 0.9375rem;
+  border-bottom: 0.8px solid var(--stroke-color);
+}
+
+.single-question + .single-question {
+  padding-block-start: 0.9375rem;
+}
+
+.question {
+  font-family: var(--font-family-2);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.16875rem;
+}
+
+.options {
+  margin-block-start: 0.75rem;
+}
+
+.option {
+  font-size: 0.64rem;
+  font-weight: 500;
+  line-height: 0.774375rem;
+  border: 0.8px solid var(--option-buttons-border-color);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  margin-inline-end: 0.8rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.picked {
+  background-color: var(--option-buttons-background-color);
+  border: none;
+}
+
+.correct {
+  background-color: var(--right-option-background-color);
+  border: none;
+}
+
+.wrong {
+  background-color: var(--wrong-option-background-color);
+  border: none;
+  opacity: 0.5;
+}
+
+.other {
+  opacity: 0.5;
+}
