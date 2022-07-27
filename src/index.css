@@ -167,3 +167,33 @@ body {
 .other {
   opacity: 0.5;
 }
+
+.quiz-result {
+  margin-block-start: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.main-button {
+  display: block;
+  font-size: 0.64rem;
+  font-weight: 600;
+  line-height: 0.774375rem;
+  color: var(--main-buttons-text-color);
+  background-color: var(--main-buttons-background-color);
+  padding: 0.625rem 1.3125rem;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: 250ms all ease-in-out;
+}
+
+.quiz-result p {
+  font-family: var(--font-family-2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 0.968125rem;
+}
