@@ -1,5 +1,6 @@
-import QuestionForm from "./QuestionForm";
-import WelcomeScreen from "./WelcomeScreen";
+import QuizPage from "./QuizPage";
+import WelcomePage from "./WelcomePage";
+import { Route, Routes } from "react-router-dom";
 
 const questions = [
   {
@@ -32,9 +33,9 @@ const questions = [
 
 export default function App() {
   return (
-    <main>
-      <QuestionForm questions={questions} />
-      {/* <WelcomeScreen /> */}
-    </main>
+    <Routes>
+      <Route path="/" element={<WelcomePage />} />
+      <Route path="/quiz" element={<QuizPage questions={questions} />} />
+    </Routes>
   );
 }
