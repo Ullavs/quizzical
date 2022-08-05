@@ -72,28 +72,28 @@ body {
   max-width: 48rem;
 }
 
-.welcome-screen {
+.welcome-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.welcome-screen h1 {
+.welcome-page h1 {
   font-family: var(--font-family-2);
   font-size: 1.953125rem;
   font-weight: 700;
   line-height: 2.283125rem;
 }
 
-.welcome-screen p {
+.welcome-page p {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.21rem;
   margin-block-start: 0.4375rem;
 }
 
-.welcome-screen button {
+.welcome-page a {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.21rem;
@@ -101,18 +101,19 @@ body {
   padding: 1rem 3.72rem;
   background-color: var(--main-buttons-background-color);
   color: var(--main-buttons-text-color);
+  text-decoration: none;
   border-radius: 0.9375rem;
   border: none;
   cursor: pointer;
   transition: 250ms all ease-in-out;
 }
 
-.welcome-screen button:hover,
-.welcome-screen button:focus {
+.welcome-page a:hover,
+.welcome-page a:focus {
   opacity: 0.8;
 }
 
-.quiz-screen {
+.quiz-page {
   padding-block-start: 2.5rem;
 }
 
@@ -189,6 +190,7 @@ body {
   border-radius: 0.625rem;
   cursor: pointer;
   transition: 250ms all ease-in-out;
+  text-decoration: none;
 }
 
 .quiz-result p {
