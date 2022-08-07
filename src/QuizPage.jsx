@@ -1,14 +1,26 @@
+import React from "react";
 import Question from "./Question";
 import { Link } from "react-router-dom";
 
-export default function QuizPage(props) {
+export default function QuizPage() {
+  const [questions, setQuestions] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=easy")
+      .then((res) => res.json())
+      .then((data) => setQuestions(data.results));
+  }, []);
+
+  console.log(questions);
+
   return (
     <div className="quiz-page container">
-      {props.questions.map((question, index) => (
+      {questions.map((question, index) => (
         <Question
           key={index}
           question={question.question}
-          options={question.options}
+          incorrectOptions={question.incorrect_answers}
+          correctOption={question.correct_answer}
         />
       ))}
       <div className="quiz-result">
