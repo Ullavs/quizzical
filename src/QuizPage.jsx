@@ -6,7 +6,7 @@ export default function QuizPage() {
   const [questions, setQuestions] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=easy")
+    fetch("https://opentdb.com/api.php?amount=5")
       .then((res) => res.json())
       .then((data) => setQuestions(data.results));
   }, []);
