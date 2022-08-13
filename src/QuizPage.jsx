@@ -6,12 +6,20 @@ export default function QuizPage() {
   const [questions, setQuestions] = React.useState([]);
 
   React.useEffect(() => {
+    let ignore = false;
+
     fetch("https://opentdb.com/api.php?amount=5")
       .then((res) => res.json())
-      .then((data) => setQuestions(data.results));
-  }, []);
+      .then((data) => {
+        if (!ignore) {
+          setQuestions(data.results);
+        }
+      });
 
-  console.log(questions);
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   return (
     <div className="quiz-page container">
