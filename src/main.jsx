@@ -11,3 +11,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// - Loading state
+// - Antwoorden checken
+// - Kleur juiste antwoord = correct
+// - Kleur verkeerd antwoord = wrong
+// - Score tonen

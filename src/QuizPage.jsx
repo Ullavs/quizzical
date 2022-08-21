@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function QuizPage() {
   const [questions, setQuestions] = React.useState([]);
+  const [answers, setAnswers] = React.useState({});
 
   React.useEffect(() => {
     let ignore = false;
@@ -21,14 +22,22 @@ export default function QuizPage() {
     };
   }, []);
 
+  function pickAnswerForQuestion(questionID, answerID) {
+    setAnswers((prevValue) => {
+      return { ...prevValue, [questionID]: answerID };
+    });
+  }
+
   return (
     <div className="quiz-page container">
-      {questions.map((question, index) => (
+      {questions.map((question, questionID) => (
         <Question
-          key={index}
+          key={questionID}
           question={question.question}
           incorrectOptions={question.incorrect_answers}
           correctOption={question.correct_answer}
+          pickedAnswer={answers[questionID]}
+          pickAnswer={(answerID) => pickAnswerForQuestion(questionID, answerID)}
         />
       ))}
       <div className="quiz-result">
