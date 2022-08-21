@@ -1,3 +1,5 @@
+import htmlDecode from "./utils/htmlDecode";
+
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -20,11 +22,11 @@ export default function Question(props) {
 
   return (
     <div className="single-question">
-      <h3 className="question">{props.question}</h3>
+      <h3 className="question">{htmlDecode(props.question)}</h3>
       <div className="options">
         {options.map((option, index) => (
           <button className="option picked" key={index}>
-            {option}
+            {htmlDecode(option)}
           </button>
         ))}
       </div>
