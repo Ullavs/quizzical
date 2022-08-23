@@ -28,6 +28,14 @@ export default function QuizPage() {
     });
   }
 
+  if (questions.length === 0) {
+    return (
+      <div className="loading-page container">
+        <strong>Loading...</strong>
+      </div>
+    );
+  }
+
   return (
     <div className="quiz-page container">
       {questions.map((question, questionID) => (

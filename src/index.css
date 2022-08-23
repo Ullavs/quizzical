@@ -72,7 +72,8 @@ body {
   max-width: 48rem;
 }
 
-.welcome-page {
+.welcome-page,
+.loading-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
