@@ -8,6 +8,7 @@
 
   /* Button colors */
   --main-buttons-background-color: #4d5b9e;
+  --main-buttons-background-color-disabled: #8b95c6;
   --main-buttons-text-color: #f5f7fb;
   --option-buttons-background-color: #d6dbf5;
   --right-option-background-color: #94d7a2;
@@ -192,6 +193,11 @@ body {
   cursor: pointer;
   transition: 250ms all ease-in-out;
   text-decoration: none;
+}
+
+.main-button:disabled {
+  background-color: var(--main-buttons-background-color-disabled);
+  cursor: not-allowed;
 }
 
 .quiz-result p {

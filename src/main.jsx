@@ -12,8 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-// - Loading state
-// - Antwoorden checken
+// - Bij check answers disable pick answer
 // - Kleur juiste antwoord = correct
 // - Kleur verkeerd antwoord = wrong
-// - Score tonen
+// - Button try again

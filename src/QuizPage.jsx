@@ -1,10 +1,10 @@
 import React from "react";
 import Question from "./Question";
-import { Link } from "react-router-dom";
 
 export default function QuizPage() {
   const [questions, setQuestions] = React.useState([]);
   const [answers, setAnswers] = React.useState({});
+  const [score, setScore] = React.useState(null);
 
   React.useEffect(() => {
     let ignore = false;
@@ -22,10 +22,24 @@ export default function QuizPage() {
     };
   }, []);
 
-  function pickAnswerForQuestion(questionID, answerID) {
+  function pickAnswerForQuestion(questionID, answerString) {
     setAnswers((prevValue) => {
-      return { ...prevValue, [questionID]: answerID };
+      return { ...prevValue, [questionID]: answerString };
     });
+  }
+
+  function checkAnswers() {
+    const correctAnswers = questions.map((question) => {
+      return question.correct_answer;
+    });
+
+    const totalCorrectAnswers = correctAnswers.filter(
+      (correctAnswer, index) => {
+        return correctAnswer === answers[index];
+      }
+    );
+
+    setScore(totalCorrectAnswers.length);
   }
 
   if (questions.length === 0) {
@@ -45,15 +59,23 @@ export default function QuizPage() {
           incorrectOptions={question.incorrect_answers}
           correctOption={question.correct_answer}
           pickedAnswer={answers[questionID]}
-          pickAnswer={(answerID) => pickAnswerForQuestion(questionID, answerID)}
+          pickAnswer={(answerString) =>
+            pickAnswerForQuestion(questionID, answerString)
+          }
         />
       ))}
       <div className="quiz-result">
-        <p className="quiz-result-displayed">You scored 3/5 correct answers</p>
-        <button className="main-button">
-          <Link className="main-button" to="/">
-            Check answers
-          </Link>
+        {score !== null && (
+          <p className="quiz-result-displayed">
+            You scored {score}/{questions.length} correct answers
+          </p>
+        )}
+        <button
+          disabled={questions.length !== Object.keys(answers).length}
+          className="main-button"
+          onClick={checkAnswers}
+        >
+          Check answers
         </button>
       </div>
     </div>

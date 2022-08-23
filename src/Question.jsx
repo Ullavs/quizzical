@@ -12,11 +12,11 @@ export default function Question(props) {
     <div className="single-question">
       <h3 className="question">{htmlDecode(props.question)}</h3>
       <div className="options">
-        {options.map((option, answerID) => (
+        {options.map((option, index) => (
           <button
-            className={`option ${props.pickedAnswer === answerID && "picked"}`}
-            key={answerID}
-            onClick={() => props.pickAnswer(answerID)}
+            className={`option ${props.pickedAnswer === option && "picked"}`}
+            key={index}
+            onClick={() => props.pickAnswer(option)}
           >
             {htmlDecode(option)}
           </button>
