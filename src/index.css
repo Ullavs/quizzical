@@ -58,8 +58,8 @@ select {
 
 body {
   background-color: var(--background-color);
-  background-image: url(images/background-img-1.svg),
-    url(images/background-img-2.svg);
+  background-image: url(/images/background-img-1.svg),
+    url(/images/background-img-2.svg);
   background-repeat: no-repeat;
   background-position: top right, bottom left;
   background-size: 297px 235px;
