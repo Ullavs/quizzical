@@ -16,10 +16,7 @@ export default function Question(props) {
           <button
             disabled={props.disabled}
             className={`option ${props.pickedAnswer === option && "picked"} ${
-              props.disabled &&
-              props.pickedAnswer === props.correctOption &&
-              option === props.pickedAnswer &&
-              "correct"
+              props.disabled && option === props.correctOption && "correct"
             } ${
               props.disabled &&
               props.pickedAnswer !== props.correctOption &&
