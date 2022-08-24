@@ -62,6 +62,7 @@ export default function QuizPage() {
           pickAnswer={(answerString) =>
             pickAnswerForQuestion(questionID, answerString)
           }
+          disabled={score !== null}
         />
       ))}
       <div className="quiz-result">

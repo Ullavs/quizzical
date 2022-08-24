@@ -14,6 +14,7 @@ export default function Question(props) {
       <div className="options">
         {options.map((option, index) => (
           <button
+            disabled={props.disabled}
             className={`option ${props.pickedAnswer === option && "picked"}`}
             key={index}
             onClick={() => props.pickAnswer(option)}

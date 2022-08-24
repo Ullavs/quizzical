@@ -12,7 +12,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-// - Bij check answers disable pick answer
+// - Button try again
 // - Kleur juiste antwoord = correct
 // - Kleur verkeerd antwoord = wrong
-// - Button try again
