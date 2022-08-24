@@ -18,14 +18,14 @@ Solo projects are meant to challenge the skills you've learnt so far through the
 - CSS custom properties
 - CSS Grid, CSS Flexbox
 - Figma design files from Scrimba
-- This project was bootstrapped with [Vite](https://vitejs.dev/).
+- This project was bootstrapped with [Vite](https://vitejs.dev/)
 - The questions were pulled from the [Open Trivia Database API](https://opentdb.com/)
 
 ## Future improvements
 
-- Design refactor
-- Code refactor: DRY
-- Ability to choose: number of questions, difficulty level & genre
+[ ] Design refactor   
+[ ] Code refactor: DRY   
+[ ] Ability to choose: number of questions, difficulty level & genre   
 
 ## Live URL
 
