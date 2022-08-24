@@ -11,6 +11,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-// - Kleur juiste antwoord = correct
-// - Kleur verkeerd antwoord = wrong
