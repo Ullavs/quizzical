@@ -12,6 +12,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-// - Button try again
 // - Kleur juiste antwoord = correct
 // - Kleur verkeerd antwoord = wrong

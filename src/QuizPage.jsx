@@ -9,18 +9,20 @@ export default function QuizPage() {
   React.useEffect(() => {
     let ignore = false;
 
-    fetch("https://opentdb.com/api.php?amount=5")
-      .then((res) => res.json())
-      .then((data) => {
-        if (!ignore) {
-          setQuestions(data.results);
-        }
-      });
+    if (questions.length === 0) {
+      fetch("https://opentdb.com/api.php?amount=5")
+        .then((res) => res.json())
+        .then((data) => {
+          if (!ignore) {
+            setQuestions(data.results);
+          }
+        });
+    }
 
     return () => {
       ignore = true;
     };
-  }, []);
+  }, [questions]);
 
   function pickAnswerForQuestion(questionID, answerString) {
     setAnswers((prevValue) => {
@@ -40,6 +42,12 @@ export default function QuizPage() {
     );
 
     setScore(totalCorrectAnswers.length);
+  }
+
+  function tryAgain() {
+    setQuestions([]);
+    setScore(null);
+    setAnswers({});
   }
 
   if (questions.length === 0) {
@@ -71,13 +79,20 @@ export default function QuizPage() {
             You scored {score}/{questions.length} correct answers
           </p>
         )}
-        <button
-          disabled={questions.length !== Object.keys(answers).length}
-          className="main-button"
-          onClick={checkAnswers}
-        >
-          Check answers
-        </button>
+
+        {score === null ? (
+          <button
+            disabled={questions.length !== Object.keys(answers).length}
+            className="main-button"
+            onClick={checkAnswers}
+          >
+            Check answers
+          </button>
+        ) : (
+          <button className="main-button" onClick={tryAgain}>
+            Try again
+          </button>
+        )}
       </div>
     </div>
   );
