@@ -170,7 +170,6 @@ body {
 .option.wrong {
   background-color: var(--wrong-option-background-color);
   border: 1px solid var(--wrong-option-background-color);
-  color: inherit;
 }
 
 .quiz-result {
