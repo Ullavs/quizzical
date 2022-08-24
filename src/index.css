@@ -154,22 +154,22 @@ body {
 
 .picked {
   background-color: var(--option-buttons-background-color);
-  border: 1px solid var(--option-buttons-background-color);
+  border: 0.8px solid var(--option-buttons-background-color);
 }
 
 .option:disabled {
-  border: 1px solid var(--disabled-buttons-option-border-color);
+  border: 0.8px solid var(--disabled-buttons-option-border-color);
 }
 
 .option.correct {
   background-color: var(--right-option-background-color);
-  border: 1px solid var(--right-option-background-color);
+  border: 0.8px solid var(--right-option-background-color);
   color: inherit;
 }
 
 .option.wrong {
   background-color: var(--wrong-option-background-color);
-  border: 1px solid var(--wrong-option-background-color);
+  border: 0.8px solid var(--wrong-option-background-color);
 }
 
 .quiz-result {
