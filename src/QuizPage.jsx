@@ -10,7 +10,7 @@ export default function QuizPage() {
     let ignore = false;
 
     if (questions.length === 0) {
-      fetch("https://opentdb.com/api.php?amount=5")
+      fetch("https://opentdb.com/api.php?amount=5&difficulty=easy")
         .then((res) => res.json())
         .then((data) => {
           if (!ignore) {
