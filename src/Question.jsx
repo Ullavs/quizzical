@@ -15,7 +15,17 @@ export default function Question(props) {
         {options.map((option, index) => (
           <button
             disabled={props.disabled}
-            className={`option ${props.pickedAnswer === option && "picked"}`}
+            className={`option ${props.pickedAnswer === option && "picked"} ${
+              props.disabled &&
+              props.pickedAnswer === props.correctOption &&
+              option === props.pickedAnswer &&
+              "correct"
+            } ${
+              props.disabled &&
+              props.pickedAnswer !== props.correctOption &&
+              option === props.pickedAnswer &&
+              "wrong"
+            }`}
             key={index}
             onClick={() => props.pickAnswer(option)}
           >
