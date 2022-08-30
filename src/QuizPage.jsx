@@ -90,7 +90,7 @@ export default function QuizPage() {
           </button>
         ) : (
           <button className="main-button" onClick={tryAgain}>
-            Try again
+            {score === questions.length ? "Play again" : "Try again"}
           </button>
         )}
       </div>
