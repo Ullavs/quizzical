@@ -1,5 +1,5 @@
-import QuizPage from "./QuizPage";
-import WelcomePage from "./WelcomePage";
+import QuizPage from "./components/QuizPage";
+import WelcomePage from "./components/WelcomePage";
 import { Route, Routes } from "react-router-dom";
 
 export default function App() {

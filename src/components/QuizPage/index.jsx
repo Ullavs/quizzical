@@ -1,5 +1,5 @@
 import React from "react";
-import Question from "./Question";
+import Question from "../Question";
 
 export default function QuizPage() {
   const [questions, setQuestions] = React.useState([]);

@@ -1,6 +1,6 @@
 import React from "react";
-import htmlDecode from "./utils/htmlDecode";
-import shuffle from "./utils/shuffle";
+import htmlDecode from "../../utils/htmlDecode";
+import shuffle from "../../utils/shuffle";
 
 export default function Question(props) {
   const options = React.useMemo(
